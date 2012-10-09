@@ -28,18 +28,18 @@ import grails.util.Environment
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
-grails.project.target.level = 1.6
-grails.project.source.level = 1.6
+// grails.project.target.level = 1.6
+// grails.project.source.level = 1.6
 // grails.project.war.file = "target/${appName}.war"
 
 grails.project.war.osgi.headers = false
 
 def environment = Environment.getCurrent()
 
-if (environment != Environment.PRODUCTION){
-    println "use inline plugin in env: ${environment}"
-    grails.plugin.location.'icescrum-core' = '../plugins/icescrum-core'
-}
+// if (environment != Environment.PRODUCTION){
+//     println "use inline plugin in env: ${environment}"
+//     grails.plugin.location.'icescrum-core' = '../plugins/icescrum-core'
+// }
 
 coverage {
     enabledByDefault = false
@@ -83,16 +83,16 @@ grails.project.dependency.resolution = {
         # runtime 'commons-dbcp:commons-dbcp:1.4'
     }
 
-    if (environment == Environment.PRODUCTION){
-        plugins {
-            compile "org.icescrum:icescrum-core:1.6-SNAPSHOT"
-            compile ":tomcat:1.3.9"
-        }
-    }else{
-        plugins {
-            compile ":tomcatnio:1.3.4"
-        }
-    }
+//    if (environment == Environment.PRODUCTION){
+//        plugins {
+//            compile "org.icescrum:icescrum-core:1.6-SNAPSHOT"
+//            compile ":tomcat:1.3.9"
+//        }
+//    }else{
+//        plugins {
+//            compile ":tomcatnio:1.3.4"
+//        }
+//    }
 
     plugins {
         compile "org.icescrum:entry-points:0.4.2"
