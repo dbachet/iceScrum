@@ -28,7 +28,9 @@ import grails.util.Environment
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
-grails.project.war.file = "target/${appName}.war"
+grails.project.target.level = 1.6
+grails.project.source.level = 1.6
+// grails.project.war.file = "target/${appName}.war"
 
 grails.project.war.osgi.headers = false
 
@@ -65,19 +67,20 @@ grails.project.dependency.resolution = {
 
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
-        //mavenLocal()
+        mavenLocal()
         mavenCentral()
-        //mavenRepo "http://snapshots.repository.codehaus.org"
-        mavenRepo "http://repository.codehaus.org"
-        mavenRepo "http://repo.icescrum.org/artifactory/plugins-release/"
-        mavenRepo "http://repo.icescrum.org/artifactory/plugins-snapshot/"
+        // mavenRepo "http://snapshots.repository.codehaus.org"
+        // mavenRepo "http://repository.codehaus.org"
+        // mavenRepo "http://repo.icescrum.org/artifactory/plugins-release/"
+        // mavenRepo "http://repo.icescrum.org/artifactory/plugins-snapshot/"
     }
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
         test 'xmlunit:xmlunit:1.3'
-        runtime 'mysql:mysql-connector-java:5.1.18'
-        runtime 'commons-dbcp:commons-dbcp:1.4'
+        runtime 'postgresql:postgresql:8.4-702.jdbc3'
+        # runtime 'mysql:mysql-connector-java:5.1.18'
+        # runtime 'commons-dbcp:commons-dbcp:1.4'
     }
 
     if (environment == Environment.PRODUCTION){
